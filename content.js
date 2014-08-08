@@ -2,14 +2,14 @@ var word;
 var searchword = document.getElementById('searchword');
 var search = document.getElementsByClassName('cdo-search-button')[0];
 var needToUpdate = false;
-var updateWaitForTime = 200;
+var updateWaitForTime = 500;
 var updateTime;
 
 chrome.runtime.onMessage.addListener(
   function(message, sender, sendResponse) {
     if (message.type == 'wordNow') {
-      word = message.word;
-      searchword.value = word;
+      // word = message.word;
+      // searchword.value = word;
     }
     if (message.type == 'highlight') {
       if (!needToUpdate) {
